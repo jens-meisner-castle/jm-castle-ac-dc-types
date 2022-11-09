@@ -1,12 +1,12 @@
 {
   "name": "jm-castle-ac-dc-types",
-  "version": "0.6.6",
+  "version": "0.7.0",
   "type": "module",
   "private": false,
-  "main": "dist/Types.mjs",
-  "types": "dist/Types.d.ts",
+  "main": "dist/All.mjs",
+  "types": "dist/All.d.ts",
   "exports": {
-    "./*": "./dist/*.*"
+    "./*": "./dist/*"
   },
   "scripts": {
     "prebuild": "eslint \"./src/**\"",
