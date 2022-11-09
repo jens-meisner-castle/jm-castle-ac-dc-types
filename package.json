@@ -1,10 +1,10 @@
 {
   "name": "jm-castle-ac-dc-types",
-  "version": "0.6.3",
+  "version": "0.6.6",
   "type": "module",
   "private": false,
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "dist/Types.mjs",
+  "types": "dist/Types.d.ts",
   "exports": {
     "./*": "./dist/*.*"
   },
