@@ -1,13 +1,10 @@
 {
   "name": "jm-castle-ac-dc-types",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "type": "module",
   "private": false,
   "main": "dist/All.mjs",
   "types": "dist/All.d.ts",
-  "exports": {
-    "./*": "./dist/*"
-  },
   "scripts": {
     "prebuild": "eslint \"./src/**\"",
     "build": "tsc --declaration --project tsconfig.json"
