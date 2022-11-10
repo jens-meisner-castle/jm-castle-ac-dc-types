@@ -12,7 +12,7 @@ import typescript from "rollup-plugin-typescript2";
 import pkg from "./package.json";
 
 export default {
-  input: ["src/*.*"],
+  input: ["src/index.ts", "src/database/**/*.*", "src/system/**/*.*"],
   output: [
     {
       dir: pkg.main,

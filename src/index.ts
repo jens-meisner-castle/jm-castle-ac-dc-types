@@ -12,21 +12,6 @@ export type AnyDataValue =
   | null
   | undefined;
 
-export interface Table {
-  id: string;
-  columnsFragment: string;
-}
-
-export interface TableStatus {
-  name: string;
-  table: Table;
-  isCreated: boolean;
-}
-
-export interface SystemSetupStatus {
-  database: { name: string; tables: Record<string, TableStatus> };
-}
-
 export interface CreateDbResponse {
   cmds: string[];
   result: Record<string, unknown>;

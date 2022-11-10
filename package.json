@@ -1,6 +1,6 @@
 {
   "name": "jm-castle-ac-dc-types",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "type": "module",
   "private": false,
   "main": "build",
@@ -10,6 +10,10 @@
     "build": "npm run clean && npm run build-rollup",
     "prebuild": "eslint \"./src/**\"",
     "build-tsc": "tsc --project tsconfig.json"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "luxon": "^3.x"
   },
   "devDependencies": {
     "@rbnlffl/rollup-plugin-eslint": "^4.0.0",
