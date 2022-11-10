@@ -1,9 +1,9 @@
 {
   "name": "jm-castle-ac-dc-types",
-  "version": "0.8.0",
+  "version": "0.8.1",
   "type": "module",
   "private": false,
-  "main": "build",
+  "main": "build/index.js",
   "scripts": {
     "clean": "del-cli build",
     "build-rollup": "rollup -c",
