@@ -1,4 +1,8 @@
 import { DateTime, Duration } from "luxon";
+import { Table, TableStatus } from "./database";
+import { SystemSetupStatus } from "./system";
+
+export { Table, TableStatus, SystemSetupStatus };
 
 export type AnyDate = Date;
 export type AnyNumber = number;
