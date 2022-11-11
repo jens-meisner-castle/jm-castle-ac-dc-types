@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ESNext",
+    "module": "ESNext",
     "esModuleInterop": true,
     "typeRoots": ["node_modules/@types"],
     "noImplicitAny": true,
@@ -10,7 +10,7 @@
     "declaration": true,
     "outDir": "build",
     "baseUrl": "./",
-    "lib": ["ES2021", "dom"],
+    "lib": ["ES6", "dom"],
     "skipLibCheck": true
   },
   "include": ["src/**/*"],

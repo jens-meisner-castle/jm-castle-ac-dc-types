@@ -1,11 +1,13 @@
 {
   "name": "jm-castle-ac-dc-types",
-  "version": "0.8.4",
+  "version": "0.9.0",
   "type": "module",
   "private": false,
-  "main": "build",
   "exports": {
-    "./*": "./build/index"
+    ".": {
+      "import": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
   },
   "types": "./build/index.d.ts",
   "scripts": {
