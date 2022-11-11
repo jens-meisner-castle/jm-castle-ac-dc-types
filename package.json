@@ -13,7 +13,7 @@
   "scripts": {
     "clean": "del-cli build",
     "build-rollup": "rollup -c",
-    "build": "npm run clean && npm run build-rollup",
+    "build": "npm run clean && npm run build-tsc",
     "prebuild": "eslint \"./src/**\"",
     "build-tsc": "tsc --project tsconfig.json"
   },
