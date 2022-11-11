@@ -1,6 +1,6 @@
 import { DateTime, Duration } from "luxon";
-import { Table, TableStatus } from "./database";
-import { SystemSetupStatus } from "./system";
+import { Table, TableStatus } from "./database/index.js";
+import { SystemSetupStatus } from "./system/index.js";
 
 export { Table, TableStatus, SystemSetupStatus };
 
