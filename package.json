@@ -1,15 +1,15 @@
 {
   "name": "jm-castle-ac-dc-types",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "type": "module",
   "private": false,
   "exports": {
     ".": {
-      "import": "./src/index.js"
+      "import": "./src/index.mts"
     },
     "./package.json": "./package.json"
   },
-  "types": "./build/index.d.ts",
+  "types": "./build/index.d.mts",
   "scripts": {
     "clean": "del-cli build",
     "build-rollup": "rollup -c",
