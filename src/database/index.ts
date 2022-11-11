@@ -1,3 +1,3 @@
-import { Table, TableStatus } from "./Table";
+import { Table, TableStatus } from "./Table.js";
 
 export { Table, TableStatus };

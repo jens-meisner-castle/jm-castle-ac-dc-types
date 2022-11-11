@@ -1,3 +1,3 @@
-import { SystemSetupStatus } from "./Setup";
+import { SystemSetupStatus } from "./Setup.js";
 
 export { SystemSetupStatus };
