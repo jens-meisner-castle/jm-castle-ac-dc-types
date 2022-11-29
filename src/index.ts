@@ -34,6 +34,7 @@ export type ControlPartTypeId = "sys-freezers-control" | "sys-action";
 
 export type PhysicalDeviceTypeId =
   | "shelly-1-pm"
+  | "shelly-plug-s"
   | "shelly-1"
   | "shelly-2-5"
   | "bosswerk-mi-600";
