@@ -449,9 +449,10 @@ export const ControlActionTypes = {
   },
   increase: {
     description:
-      'Increases the value of the target datapoint by "params.increase" or 1 without parameter.',
+      'Increases the value of the target datapoint using a source and "params.increase" or 1 without parameter.',
     paramKeys: {
       source: '"target" or UniqueDatapoint',
+      ifSourceUndefined: { valueNum: 0 },
       increase: { valueNum: 1 },
       target: {
         device: "<the target device id>",
