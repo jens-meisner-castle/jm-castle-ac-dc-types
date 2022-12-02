@@ -528,7 +528,7 @@ export interface SystemSpec {
   host: string;
   port: number;
   certs: {
-    ca: string;
+    ca?: string;
     hostCert: string;
     hostKey: string;
   };
