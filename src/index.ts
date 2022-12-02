@@ -445,7 +445,14 @@ export const ControlActionTypes = {
   toggle: {
     description:
       'Toggles the value of the "target" datapoint between "true" and "false". Depends on the "source" datapoint.',
-    paramKeys: {},
+    paramKeys: {
+      source: '"target" or UniqueDatapoint',
+      ifSourceUndefined: { valueNum: 0, valueString: "false" },
+      target: {
+        device: "<the target device id>",
+        datapoint: "<the target datapoint id",
+      },
+    },
   },
   increase: {
     description:
@@ -518,6 +525,13 @@ export type MailingSpec = {
 
 export interface SystemSpec {
   name?: string;
+  host: string;
+  port: number;
+  certs: {
+    ca: string;
+    hostCert: string;
+    hostKey: string;
+  };
 }
 
 export interface Configuration {
