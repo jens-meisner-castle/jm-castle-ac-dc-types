@@ -1,8 +1,30 @@
 import { DateTime, Duration } from "luxon";
 import { Table, TableStatus } from "./database/index.js";
 import { SystemSetupStatus } from "./system/index.js";
+import {
+  DurationUnit,
+  DurationUnits,
+  getCategoryOfUnit,
+  isDurationUnit,
+  LuxonKey,
+  ValueType,
+  ValueTypes,
+  ValueUnit,
+  ValueUnits,
+} from "./value-type/index.js";
 
 export { Table, TableStatus, SystemSetupStatus };
+export {
+  ValueType,
+  ValueTypes,
+  DurationUnit,
+  DurationUnits,
+  isDurationUnit,
+  LuxonKey,
+  ValueUnit,
+  ValueUnits,
+  getCategoryOfUnit,
+};
 
 export type AnyDate = Date;
 export type AnyNumber = number;
@@ -49,71 +71,6 @@ export type DeviceTypeId =
   | PhysicalDeviceTypeId
   | SimulationDeviceTypeId
   | "mqtt";
-
-export const ValueTypes = {
-  number: { id: "number", name: "Eine Zahl" },
-  string: { id: "string", name: "Eine Zeichenfolge" },
-  boolean: {
-    id: "boolean",
-    name: "Wahrheitswert (true oder false bzw. 1 oder 0)",
-  },
-  date: {
-    id: "date",
-    name: "Datum (formatiert als <yyyy-MM-dd HH:mm:ss> oder numerisch als Millisekundenwert)",
-  },
-};
-
-export type LuxonKey = "millisecond" | "second" | "minute" | "hour" | "day";
-
-export const DurationUnits = {
-  ms: {
-    id: "ms",
-    name: "Millisekunde",
-    cat: "duration",
-    luxonKey: "millisecond" as LuxonKey,
-  },
-  s: {
-    id: "s",
-    name: "Sekunde",
-    cat: "duration",
-    luxonKey: "second" as LuxonKey,
-  },
-  min: {
-    id: "min",
-    name: "Minute",
-    cat: "duration",
-    luxonKey: "minute" as LuxonKey,
-  },
-  h: {
-    id: "h",
-    name: "Stunde",
-    cat: "duration",
-    luxonKey: "hour" as LuxonKey,
-  },
-  d: {
-    id: "d",
-    name: "Tag",
-    cat: "duration",
-    luxonKey: "day" as LuxonKey,
-  },
-};
-
-export type DurationUnit = keyof typeof DurationUnits;
-
-export const ValueUnits = Object.assign({}, DurationUnits, {
-  "°C": { id: "°C", name: "Grad Celsius", cat: "temperature" },
-  W: { id: "W", name: "Watt", cat: "power" },
-  Wmin: { id: "Wmin", name: "Wattminute", cat: "energy" },
-  Wh: { id: "Wh", name: "Wattstunde", cat: "energy" },
-  kWh: { id: "kWh", name: "Kilowattstunde", cat: "energy" },
-  V: { id: "V", name: "Volt", cat: "voltage" },
-});
-
-export const isDurationUnit = (s: string): s is DurationUnit =>
-  !!DurationUnits[s as DurationUnit];
-
-export const getCategoryOfUnit = (id: keyof typeof ValueUnits) =>
-  ValueUnits[id]?.cat;
 
 export type DatapointValueType = keyof typeof ValueTypes;
 
