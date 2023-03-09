@@ -1,3 +1,14 @@
+import {
+  isWsMessage,
+  msg_ping,
+  msg_pong,
+  msg_publish,
+  msg_subscribe,
+  msg_welcome,
+  WsMessage,
+  WsMethod,
+  WsMethods,
+} from "jm-castle-types/build";
 import { DateTime, Duration } from "luxon";
 import { Table, TableStatus } from "./database/index.js";
 import { SystemSetupStatus } from "./system/index.js";
@@ -24,6 +35,17 @@ export {
   ValueUnit,
   ValueUnits,
   getCategoryOfUnit,
+};
+export {
+  WsMethods,
+  WsMethod,
+  WsMessage,
+  isWsMessage,
+  msg_ping,
+  msg_pong,
+  msg_publish,
+  msg_subscribe,
+  msg_welcome,
 };
 
 export type AnyDate = Date;
@@ -157,6 +179,7 @@ export interface Device {
   api: string;
   type: DeviceTypeId;
   datapoints?: Record<string, LocalDatapoint>;
+  suppressPeaks?: Record<string, { max: number }>;
   controlDatapoints?: Record<string, LocalDatapoint>;
   mapControlDatapoints?: Record<
     string,
@@ -542,40 +565,3 @@ export interface SerializableControlContext {
 export interface ControlstateContent {
   controls: Record<string, { context: SerializableControlContext }>;
 }
-
-export const Methods = {
-  welcome: "Erste Message nach connect",
-  ping: "Heartbeat",
-  pong: "Heartbeat response",
-  subscribe: "Subscribe to data topic (pub-sub)",
-  publish: "Publish data for a topic (pub-sub)",
-};
-
-export type WsMethod = keyof typeof Methods;
-
-export interface WsMessage {
-  method: WsMethod;
-  params?: Record<string, unknown>;
-}
-
-export const isWsMessage = (
-  msg: unknown & { method?: unknown }
-): msg is WsMessage => {
-  return typeof msg === "object" && typeof msg.method === "string";
-};
-
-export const msg_welcome = (): WsMessage => ({ method: "welcome" });
-
-export const msg_ping = (): WsMessage => ({ method: "ping" });
-
-export const msg_pong = (): WsMessage => ({ method: "pong" });
-
-export const msg_subscribe = (topic: string): WsMessage => {
-  const method = "subscribe";
-  return { method, params: { topic } };
-};
-
-export const msg_publish = (topic: string, data: unknown): WsMessage => {
-  const method = "publish";
-  return { method, params: { topic, data } };
-};
