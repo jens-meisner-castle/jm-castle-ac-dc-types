@@ -10,7 +10,6 @@ import {
   WsMethods,
 } from "jm-castle-types/build";
 import { DateTime, Duration } from "luxon";
-import { Table, TableStatus } from "./database/index.js";
 import { SystemSetupStatus } from "./system/index.js";
 import {
   DurationUnit,
@@ -24,7 +23,7 @@ import {
   ValueUnits,
 } from "./value-type/index.js";
 
-export { Table, TableStatus, SystemSetupStatus };
+export { SystemSetupStatus };
 export {
   ValueType,
   ValueTypes,
