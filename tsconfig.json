@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "typeRoots": ["node_modules/@types"],
     "noImplicitAny": true,
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "sourceMap": true,
     "declaration": true,
     "outDir": "build",

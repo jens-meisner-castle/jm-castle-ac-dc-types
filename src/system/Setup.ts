@@ -1,4 +1,4 @@
-import { TableStatus } from "../database/Table.js";
+import { TableStatus } from "jm-castle-types";
 
 export interface SystemSetupStatus {
   database: { name: string; tables: Record<string, TableStatus> };
