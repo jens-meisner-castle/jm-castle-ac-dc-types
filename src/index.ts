@@ -19,8 +19,12 @@ import {
 import {
   PersistentRow,
   Row_AnyLog,
+  Row_Datapoint,
   Row_DatapointControlLog,
   Row_DatapointLog,
+  Row_Sample,
+  Row_SampleDataLog,
+  Row_SampleDatapoint,
 } from "./row/index.js";
 import {
   DurationUnit,
@@ -35,7 +39,16 @@ import {
 } from "./value-type/index.js";
 
 export { AllTableNames, TableName, TableRows, DbExportData };
-export { PersistentRow, Row_AnyLog, Row_DatapointControlLog, Row_DatapointLog };
+export {
+  PersistentRow,
+  Row_AnyLog,
+  Row_DatapointControlLog,
+  Row_DatapointLog,
+  Row_Datapoint,
+  Row_Sample,
+  Row_SampleDatapoint,
+  Row_SampleDataLog,
+};
 export {
   ValueType,
   ValueTypes,
