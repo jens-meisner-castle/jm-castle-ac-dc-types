@@ -1,6 +1,6 @@
 {
   "name": "jm-castle-ac-dc-types",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "type": "module",
   "private": false,
   "module": "./build",
@@ -35,7 +35,7 @@
     "cross-env": "^7.0.3",
     "del-cli": "^5.0.0",
     "eslint": "^8.23.1",
-    "jm-castle-types": "^0.3.0",
+    "jm-castle-types": "^0.4.0",
     "nodemon": "^2.0.19",
     "prettier": "^2.7.1",
     "ts-node": "^10.9.1",
