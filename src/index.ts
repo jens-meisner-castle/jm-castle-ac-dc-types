@@ -91,7 +91,8 @@ export type PhysicalDeviceTypeId =
   | "shelly-plug-s"
   | "shelly-1"
   | "shelly-2-5"
-  | "bosswerk-mi-600";
+  | "bosswerk-mi-600"
+  | "hichi-sml-reader";
 
 export type SimulationDeviceTypeId =
   | "sim-seconds"
@@ -473,7 +474,7 @@ export interface SystemSpec {
   };
   client?: {
     path: string;
-};
+  };
 }
 
 export interface Configuration {
